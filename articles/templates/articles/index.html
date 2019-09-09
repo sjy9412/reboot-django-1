@@ -1,0 +1,62 @@
+{% extends 'articles/base.html' %}
+
+{% block css %}
+.toptitle {
+  display:flex;
+}
+
+.board_table {
+  display:flex;
+  width : 100wh;
+}
+
+.board_table > tbody {
+  margin:10px;
+}
+
+.table_content {
+ 
+}
+.go_new {
+  display:flex;
+  width:50px;
+  height:50px;
+  margin:0 auto;
+  text-align:center;
+  line-height:50px;
+}
+{% endblock %}
+
+{% block body %}
+<div class="toptitle">
+  <div>
+    2주만에 돌아온 탁쌤의 Web시간!
+  </div>
+  <a class="" href="/articles/new/">
+    <button class="go_new">작성
+    </button>
+  </a>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">제목</th>
+      <th scope="col">작성일자</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for article in articles %}
+    <tr>
+      <th scope="row">{{ article.id }}</th>
+      <td>
+        <a href="/articles/{{article.id}}">
+          {{ article.title }}</td>
+        </a>
+      <td>{{ article.created_at}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+
+</table>
+{% endblock %}
