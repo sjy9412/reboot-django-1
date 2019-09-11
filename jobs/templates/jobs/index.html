@@ -1,0 +1,16 @@
+{% extends 'jobs/base.html' %}
+{% block body %}
+<form action="{% url 'jobs:result' %}" method="POST">
+  {% csrf_token %}
+  <div class="form-row align-items-center m-2">
+    <div class="col-sm-4 my-1">
+      <label class="sr-only" for="inlineFormInputName">Name</label>
+      <input type="text" name="name" class="form-control" id="inlineFormInputName" placeholder="이름을 입력하세요.">
+    </div>
+    <div class="col-auto my-1">
+      <input type="submit" class="btn btn-secondary" value="전생 확인하기">
+    </div>
+  </div>
+</form>
+{% endblock %}
+

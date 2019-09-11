@@ -1,0 +1,11 @@
+{% extends 'jobs/base.html' %}
+{% block body %}
+<div class="jumbotron jumbotron-fluid text-center">
+  <div class="container">
+    <h1 class="display-4">{{ info.job }}</h1>
+    <img src="{{ image_url }}" alt="{{ info.job }}">
+    <p class="lead mt-3">{{ info.name }}님의 전생은 {{ info.job }}입니다.</p>
+    <a href="/jobs/" class="btn btn-outline-secondary mt-4 mx-auto d-block" style="width:70%">다시하기</a>
+  </div>
+</div>
+{% endblock %}
